@@ -18,7 +18,7 @@ with conn:
 fileList = ('information.docx','Hello.txt','myImage.png', \
             'myMovie.mpg','World.txt','data.pdf','myPhoto.jpg')
 
-
+#Traverse through the tuple to find txt files
 for fileName in fileList:
     if fileName.endswith('txt'):
         with conn:
