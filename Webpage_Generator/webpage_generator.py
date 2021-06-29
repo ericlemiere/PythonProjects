@@ -38,14 +38,15 @@ class ParentWindow(Frame):
 # ==========================================================================
 
 def GetInput(self):
-    userInput = self.text1.get("1.0",END).splitlines()
-    lineInput = """"""
+    # splitlines() accounts for carriage returns in input
+    lineInput = self.text1.get("1.0",END).splitlines()
+    userInput = """"""
 
-    for line in userInput:
-        lineInput = """{}\n{}""".format(lineInput,line)
-        
-    CreatePage(self, lineInput)
-    print(lineInput)
+    # format the user input with returns
+    for line in lineInput:
+        userInput = """{}\n{}""".format(userInput,line)
+    
+    CreatePage(self, userInput)
     
 
 
@@ -56,6 +57,8 @@ def CreatePage(self, userInput):
     message = userInput
 
     # Create html with insertable message
+    # Using the <pre> tag allows for multiline string input
+    # CSS added to make <pre> text look nicer
     webpage_html = """
     <!DOCTYPE html>
     <html>
