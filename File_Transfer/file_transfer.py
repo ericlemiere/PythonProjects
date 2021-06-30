@@ -53,6 +53,7 @@ class ParentWindow(Frame):
         self.lbl2.grid(row=3, column=0, padx=(40,0), pady=(40,0), sticky=W)
 
 
+# ============================= FUNCTIONS ==================================
 
 def Browse(self, num):
     thisDir = fd.askdirectory()
@@ -61,7 +62,7 @@ def Browse(self, num):
     if num == 2:
         UpdateBox2(self,thisDir)
     else:
-        return
+        print("Error")
 
 # The UpdateBox functions show the file path in the text boxes on GUI
 def UpdateBox1(self,thisDir):
@@ -113,7 +114,7 @@ def CheckFiles(self):
             print("{}: {}".format(i, timeFMT))
             shutil.copy(source+i, destination)
 
-
+# ============================= END ==================================
 
 
 if __name__ == "__main__":
