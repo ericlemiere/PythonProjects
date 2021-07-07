@@ -23,13 +23,19 @@ def loadGUI(self):
 
 
     # =============== TEXT BOXES ===================
+    phoneDefault = tk.StringVar()
+    phoneDefault.set("###-###-####")
+    emailDefault = tk.StringVar()
+    emailDefault.set("example@example.com")
+    
+    
     self.txt_fname = tk.Entry(self.master, text= "")
     self.txt_fname.grid(row=1, column = 0, rowspan = 1, columnspan = 2, padx=(30,40), pady=(0,0), sticky=N+E+W)
     self.txt_lname = tk.Entry(self.master, text= "")
     self.txt_lname.grid(row=1, column = 2, rowspan = 1, columnspan = 2, padx=(30,40), pady=(0,0), sticky=N+E+W)
-    self.txt_phone = tk.Entry(self.master, text= "")
+    self.txt_phone = tk.Entry(self.master, textvariable=phoneDefault)
     self.txt_phone.grid(row=3, column = 0, rowspan = 1, columnspan = 2, padx=(30,40), pady=(0,0), sticky=N+E+W)
-    self.txt_email = tk.Entry(self.master, text= "")
+    self.txt_email = tk.Entry(self.master, textvariable=emailDefault)
     self.txt_email.grid(row=3, column = 2, rowspan = 1, columnspan = 2, padx=(30,40), pady=(0,0), sticky=N+E+W)
     self.txt_course = tk.Entry(self.master, text="")
     self.txt_course.grid(row=5, column=0, rowspan = 1, columnspan = 4, padx=(30,40), pady=(0,0), sticky=N+E+W)
@@ -38,6 +44,12 @@ def loadGUI(self):
     # =============== BUTTONS ===================
     self.btn_add = tk.Button(self.master, width=12, height=2, text="Submit", command=lambda: Student_func.addToList(self))
     self.btn_add.grid(row=6, column=0, padx=(25,0), pady=(35,35), sticky=W)
+
+    self.btn_clear = tk.Button(self.master, width=12, height=2, text="Clear", command=lambda: Student_func.onClear(self))
+    self.btn_clear.grid(row=6, column=1, padx=(25,0), pady=(35,35), sticky=W)
+
+    self.btn_update = tk.Button(self.master, width=12, height=2, text="Update", command=lambda: Student_func.updateStudent(self))
+    self.btn_update.grid(row=6, column=2, padx=(25,0), pady=(35,35), sticky=W)
 
     self.btn_delete = tk.Button(self.master, width = 12, height = 2, text="Delete", command=lambda: Student_func.deleteStudent(self))
     self.btn_delete.grid(row=7, column=7, padx=(25,0), pady=(45,10), sticky=E)
@@ -56,6 +68,8 @@ def loadGUI(self):
     self.lstList1.grid(row=0, column=5, rowspan=7, columnspan=4, padx=(25,0), pady=(0,0), sticky=W)    
 
 
+    Student_func.createDB(self)
+    Student_func.populate(self)
 
 
 
