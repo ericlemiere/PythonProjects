@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Classes.classApp',
+    'Classes.classApp', # It gave an error if only classApp was there, so had to add Classes.classApp
 ]
 
 MIDDLEWARE = [
