@@ -6,8 +6,8 @@ These are some projects I created using Python, Django, SQL, HTML, CSS, and Java
 - [Checkbook App](https://github.com/ericlemiere/PythonProjects/tree/main/Django_Projects/Django_Checkbook)
 - [University App](https://github.com/ericlemiere/PythonProjects/tree/main/Django_Projects/DjangoUniversity)
 - [Student Tracking GUI](https://github.com/ericlemiere/PythonProjects/tree/main/Student_Tracking)
-- [File Transfer GUI](https://github.com/ericlemiere/PythonProjects/tree/main/File_Transfer)
-- [Phonebook GUI](https://github.com/ericlemiere/PythonProjects/tree/main/Phonebook)
+- [File Transfer GUI](https://github.com/ericlemiere/PythonProjects/tree/main/File_Transfer/file_transfer.py)
+- [Phonebook GUI](https://github.com/ericlemiere/PythonProjects/tree/main/Phonebook/)
 
 
 ### Checkbook App:
